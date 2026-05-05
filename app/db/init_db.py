@@ -1,10 +1,6 @@
 from app.db.base import Base
 from app.db.session import SessionLocal, engine
-from app.models.complaint import Complaint
 from app.models.location import Location
-from app.models.power_status import OfficialUpdate
-from app.models.report import PowerReport
-from app.models.user import User
 
 SEED_LOCATIONS = [
     {"state": "Lagos", "city": "Ikeja", "area_name": "Allen Avenue"},
