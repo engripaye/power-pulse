@@ -1,13 +1,16 @@
 from fastapi import FastAPI
 
-app = FastAPI()
+from app.api.v1.router import api_router
+from app.db.base import Base
+from app.db.session import engine
+
+Base.metadata.create_all(bind=engine)
+
+app = FastAPI(title="PowerPulse API")
+app.include_router(api_router, prefix="/api/v1")
 
 
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
+@app.get("/health", tags=["Health"])
+def health_check() -> dict[str, str]:
+    return {"status": "ok"}
 
-
-@app.get("/hello/{name}")
-async def say_hello(name: str):
-    return {"message": f"Hello {name}"}
