@@ -1,4 +1,4 @@
-from typing import Annotated, List, Type
+from typing import Annotated, Type
 
 from fastapi import APIRouter, Depends, status
 from sqlalchemy.orm import Session
@@ -8,7 +8,7 @@ from app.db.session import get_db
 from app.models.location import Location
 from app.models.user import User
 from app.repositories.location_repository import create_location, list_locations
-from app.schemas.location import LocationCreate, LocationRead
+from app.middleware.schemas import LocationCreate, LocationRead
 
 router = APIRouter()
 

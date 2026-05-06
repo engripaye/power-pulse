@@ -5,8 +5,8 @@ from app.core.security import create_access_token, hash_password, verify_passwor
 from app.models.user import User
 from app.repositories.location_repository import get_location
 from app.repositories.user_repository import create_user, get_user_by_email
-from app.schemas.auth import Token
-from app.schemas.user import UserCreate
+from app.middleware.schemas import Token
+from app.middleware.schemas import UserCreate
 
 
 def register_user(db: Session, payload: UserCreate) -> User:

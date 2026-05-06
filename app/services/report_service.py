@@ -8,7 +8,7 @@ from app.models.user import User
 from app.repositories.location_repository import get_location
 from app.repositories.report_repository import create_report, get_latest_report, get_reports_since
 from app.repositories.status_repository import get_latest_official_update
-from app.schemas.report import AreaStatus, ReportCreate
+from app.middleware.schemas.report import AreaStatus, ReportCreate
 
 
 def submit_report(db: Session, current_user: User, payload: ReportCreate) -> PowerReport:

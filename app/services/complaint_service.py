@@ -5,7 +5,7 @@ from app.models.complaint import Complaint
 from app.models.user import User
 from app.repositories.complaint_repository import create_complaint, get_complaint
 from app.repositories.location_repository import get_location
-from app.schemas.complaint import ComplaintCreate, ComplaintRespond
+from app.middleware.schemas import ComplaintCreate, ComplaintRespond
 
 
 def submit_complaint(db: Session, current_user: User, payload: ComplaintCreate) -> Complaint:

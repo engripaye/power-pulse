@@ -1,4 +1,4 @@
-from typing import Annotated, List, Type
+from typing import Annotated, Type
 
 from fastapi import APIRouter, Depends, Query, status
 from sqlalchemy.orm import Session
@@ -8,7 +8,7 @@ from app.db.session import get_db
 from app.models.complaint import Complaint
 from app.models.user import User
 from app.repositories.complaint_repository import list_complaints
-from app.schemas.complaint import ComplaintCreate, ComplaintRead, ComplaintRespond
+from app.middleware.schemas import ComplaintCreate, ComplaintRead, ComplaintRespond
 from app.services.complaint_service import respond_to_complaint, submit_complaint
 
 router = APIRouter()

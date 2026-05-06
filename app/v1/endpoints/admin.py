@@ -8,9 +8,9 @@ from app.db.session import get_db
 from app.models.power_status import OfficialUpdate
 from app.models.user import User
 from app.repositories.complaint_repository import list_complaints
-from app.schemas.complaint import ComplaintRead
-from app.schemas.power_status import OfficialUpdateCreate, OfficialUpdateRead
-from app.schemas.report import AreaStatus
+from app.middleware.schemas import ComplaintRead
+from app.middleware.schemas import OfficialUpdateCreate, OfficialUpdateRead
+from app.middleware.schemas.report import AreaStatus
 from app.services.report_service import get_area_status
 from app.services.status_service import post_official_update
 

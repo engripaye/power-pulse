@@ -7,7 +7,7 @@ from app.core.dependencies import get_current_user
 from app.db.session import get_db
 from app.models.report import PowerReport
 from app.models.user import User
-from app.schemas.report import ReportCreate, ReportRead
+from app.middleware.schemas.report import ReportCreate, ReportRead
 from app.services.report_service import submit_report
 
 router = APIRouter()

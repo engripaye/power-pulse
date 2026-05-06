@@ -5,7 +5,7 @@ from app.models.power_status import OfficialUpdate
 from app.models.user import User
 from app.repositories.location_repository import get_location
 from app.repositories.status_repository import create_official_update
-from app.schemas.power_status import OfficialUpdateCreate
+from app.middleware.schemas import OfficialUpdateCreate
 
 
 def post_official_update(
